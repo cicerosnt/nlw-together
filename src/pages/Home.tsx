@@ -42,7 +42,12 @@ async function handlerJoingRoom(event: FormEvent){
     return;
   }
 
-  history.push(`rooms/${roomCode}`);
+  if(rooRef.val().endedAt){
+    alert('Room already closed.');
+    return;
+  }
+
+  history.push(`room/${roomCode}`);
 
 }
 
@@ -51,7 +56,7 @@ async function handlerJoingRoom(event: FormEvent){
       <aside>
         <img src={inllustratorImg} alt="Inlustração de perguntas e respostas" />
         <strong>Crie salas de Q&A ao-vivo</strong>
-        <p>Tire suas duvidas em tempo real</p>
+        <p>Tire as dúvidas da sua audiência em tempo-real</p>
 
       </aside>
       <main>
@@ -65,7 +70,7 @@ async function handlerJoingRoom(event: FormEvent){
           </button>
 
           <div className="separator">
-            ou entre em uma sala
+            ou entre em uma sala existente
           </div>
 
           <form onSubmit={handlerJoingRoom}>
@@ -75,14 +80,13 @@ async function handlerJoingRoom(event: FormEvent){
             type="text" 
             name="code_roon" 
             id="codeRoon" 
-            placeholder="Informe o cídigo da sala :-)"/>
+            placeholder="Informe o código da sala"/>
             <Button type="submit">
-              Entrar na sala
+              Entrar
             </Button>
 
           </form>
         </div>
-
       </main>
     </div>
   )

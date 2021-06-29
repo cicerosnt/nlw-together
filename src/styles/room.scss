@@ -56,12 +56,12 @@
 
     form{
       textarea{
-        width: 100%;
+        width: calc(100% - 32px);
         border: 0;
         padding: 16px;
         border-radius: 8px;
-        background-color: fefefe;
-        box-shadow: 0 2px 12px;
+        background-color: #fefefe;
+        box-shadow: 0 2px 12px rgba(0,0,0,.5);
         resize: vertical;
         min-height: 130px;
       }
@@ -108,7 +108,7 @@
     }
 
     .question-list{
-      margin-top: 32px;
+      margin: 32px 0;
     }
   }
 }
